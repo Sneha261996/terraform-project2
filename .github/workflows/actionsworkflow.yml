@@ -13,12 +13,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Configure AWS Credentials (OIDC)
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/YOUR_OIDC_ROLE
-          aws-region: us-east-1
-
       - name: Retrieve AWS Credentials from Secrets Manager
         id: get-secrets
         run: |
